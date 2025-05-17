@@ -2,26 +2,36 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Refúgio SL 91</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header>
     <h1>Refúgio SL 91</h1>
-    <p class="subtitulo">Encontre conforto na Palavra</p>
+    <p class="subtitulo">Conforto e força pela Palavra</p>
   </header>
 
   <main>
     <section class="conteudo">
-      <h2 id="versiculo">Carregando versículo...</h2>
-      <p id="reflexao">Carregando reflexão...</p>
+      <div class="tema-selector">
+        <label for="tema">Escolha um tema:</label>
+        <select id="tema" onchange="gerarConteudoPorTema()">
+          <option value="">Aleatório</option>
+          <option value="ansiedade">Ansiedade</option>
+          <option value="esperanca">Esperança</option>
+        </select>
+      </div>
+
+      <h2 id="versiculo"></h2>
+      <p id="reflexao"></p>
+
+      <button onclick="gerarConteudoPorTema()">Nova Mensagem</button>
     </section>
-    <button onclick="gerarConteudo()">Nova Mensagem</button>
   </main>
 
   <footer>
-    <p>&copy; 2025 Refúgio SL 91 • Apoio com base bíblica</p>
+    Refúgio SL 91 - Seu lugar de paz e esperança
   </footer>
 
   <script src="scripts.js"></script>
