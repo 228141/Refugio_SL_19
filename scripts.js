@@ -93,3 +93,41 @@ window.onload = () => {
   gerarConteudoPorTema();
   exibirPedidosOracao();
 };
+
+function abrirModoDevocional() {
+  // Mensagens fixas (podem ser personalizadas depois)
+  const versiculos = [
+    {
+      texto: "Salmo 91:1",
+      mensagem: "Aquele que habita no esconderijo do Altíssimo, à sombra do Onipotente descansará.",
+      reflexao: "Deus é o seu refúgio seguro, mesmo em tempos de medo e incerteza.",
+      oracao: "Senhor, ajuda-me a confiar mais em Ti e a descansar na Tua presença diariamente."
+    },
+    {
+      texto: "Isaías 41:10",
+      mensagem: "Não temas, porque eu sou contigo; não te assombres, porque eu sou o teu Deus.",
+      reflexao: "Mesmo em momentos de fraqueza, você nunca está sozinho.",
+      oracao: "Senhor, dá-me forças e coragem para enfrentar os desafios de hoje com fé."
+    },
+    {
+      texto: "Mateus 11:28",
+      mensagem: "Vinde a mim, todos os que estais cansados e oprimidos, e eu vos aliviarei.",
+      reflexao: "Jesus oferece alívio para a alma cansada. Basta buscá-lo.",
+      oracao: "Jesus, recebo Teu descanso e coloco meus fardos em Tuas mãos."
+    }
+  ];
+
+  // Escolhe um devocional aleatoriamente
+  const devocional = versiculos[Math.floor(Math.random() * versiculos.length)];
+
+  document.getElementById("devocional-versiculo").innerText = `${devocional.texto} — "${devocional.mensagem}"`;
+  document.getElementById("devocional-reflexao").innerText = devocional.reflexao;
+  document.getElementById("devocional-oracao").innerText = `Oração: ${devocional.oracao}`;
+
+  // Exibe o modal
+  document.getElementById("modal-devocional").style.display = "block";
+}
+
+function fecharModoDevocional() {
+  document.getElementById("modal-devocional").style.display = "none";
+}

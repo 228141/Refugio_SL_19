@@ -28,6 +28,8 @@
 
       <button onclick="gerarConteudoPorTema()">Nova Mensagem</button>
 
+      <button id="btn-devocional" onclick="abrirModoDevocional()">Modo Devocional</button>
+      
       <section class="pedido-oracao">
         <h3>Pedido de Oração</h3>
         <form id="form-oracao" onsubmit="enviarPedidoOracao(event)">
@@ -44,6 +46,14 @@
 
     </section>
   </main>
+        <div id="modal-devocional" class="modal-devocional">
+        <div class="devocional-conteudo">
+            <span class="fechar" onclick="fecharModoDevocional()">×</span>
+            <h2 id="devocional-versiculo"></h2>
+            <p id="devocional-reflexao"></p>
+            <p id="devocional-oracao" class="oracao"></p>
+        </div>
+        </div>
 
   <footer>
     Refúgio SL 91 - Seu lugar de paz e esperança
