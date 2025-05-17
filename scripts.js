@@ -50,4 +50,46 @@ function gerarConteudoPorTema() {
   document.getElementById("reflexao").textContent = item.reflexao;
 }
 
-window.onload = gerarConteudoPorTema;
+function enviarPedidoOracao(event) {
+  event.preventDefault();
+
+  const nome = document.getElementById("nome").value.trim();
+  const mensagem = document.getElementById("mensagem").value.trim();
+
+  if (mensagem === "") return;
+
+  const pedido = {
+    nome: nome || "Anônimo",
+    mensagem: mensagem,
+    data: new Date().toLocaleDateString("pt-BR")
+  };
+
+  // Pega os pedidos antigos do localStorage
+  const pedidosSalvos = JSON.parse(localStorage.getItem("pedidosOracao")) || [];
+  pedidosSalvos.unshift(pedido); // adiciona o novo no início
+  localStorage.setItem("pedidosOracao", JSON.stringify(pedidosSalvos));
+
+  // Limpa o formulário
+  document.getElementById("form-oracao").reset();
+
+  // Atualiza a exibição
+  exibirPedidosOracao();
+}
+
+function exibirPedidosOracao() {
+  const listaUl = document.getElementById("pedidos-ul");
+  listaUl.innerHTML = "";
+
+  const pedidos = JSON.parse(localStorage.getItem("pedidosOracao")) || [];
+
+  pedidos.slice(0, 5).forEach(pedido => {
+    const li = document.createElement("li");
+    li.innerHTML = `<strong>${pedido.nome}</strong> (${pedido.data}):<br>${pedido.mensagem}`;
+    listaUl.appendChild(li);
+  });
+}
+
+window.onload = () => {
+  gerarConteudoPorTema();
+  exibirPedidosOracao();
+};

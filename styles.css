@@ -77,3 +77,65 @@ footer {
   border-radius: 8px;
   border: 1px solid #ccc;
 }
+
+.pedido-oracao {
+  margin-top: 3rem;
+  padding: 1rem;
+  background-color: #f3f9f5;
+  border-radius: 10px;
+}
+
+.pedido-oracao h3 {
+  margin-bottom: 1rem;
+  color: #2e5f4d;
+}
+
+#form-oracao {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+#form-oracao input,
+#form-oracao textarea {
+  padding: 0.6rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: none;
+}
+
+#form-oracao textarea {
+  min-height: 100px;
+}
+
+#form-oracao button {
+  align-self: flex-start;
+  background-color: #2e5f4d;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#form-oracao button:hover {
+  background-color: #3f8069;
+}
+
+#lista-pedidos {
+  margin-top: 2rem;
+}
+
+#lista-pedidos ul {
+  list-style: none;
+  padding: 0;
+}
+
+#lista-pedidos li {
+  background-color: #ffffff;
+  margin-bottom: 0.5rem;
+  padding: 0.8rem;
+  border-left: 5px solid #2e5f4d;
+  border-radius: 5px;
+}

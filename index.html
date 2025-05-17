@@ -27,6 +27,21 @@
       <p id="reflexao"></p>
 
       <button onclick="gerarConteudoPorTema()">Nova Mensagem</button>
+
+      <section class="pedido-oracao">
+        <h3>Pedido de Oração</h3>
+        <form id="form-oracao" onsubmit="enviarPedidoOracao(event)">
+            <input type="text" id="nome" placeholder="Seu nome (opcional)" />
+            <textarea id="mensagem" placeholder="Escreva seu pedido aqui..." required></textarea>
+            <button type="submit">Enviar Pedido</button>
+        </form>
+
+        <div id="lista-pedidos">
+            <h4>Pedidos Recentes</h4>
+            <ul id="pedidos-ul"></ul>
+        </div>
+        </section>
+
     </section>
   </main>
 
