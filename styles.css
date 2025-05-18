@@ -154,7 +154,30 @@ footer {
   background-color: #52765c;
 }
 
+.devocional-conteudo .oracao {
+  font-style: italic;
+  color: #dffbe4;
+}
+
+
+/* Botão para abrir modo devocional */
+#btn-devocional {
+  margin-top: 1rem;
+  background-color: #6b9475;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#btn-devocional:hover {
+  background-color: #52765c;
+}
+
+/* Modal */
 .modal-devocional {
+  display: none;
   position: fixed;
   z-index: 10;
   top: 0;
@@ -167,14 +190,15 @@ footer {
   padding: 2rem;
 }
 
+/* Conteúdo centralizado */
 .devocional-conteudo {
   max-width: 600px;
   margin: 0 auto;
   text-align: center;
-  position: relative; /* necessário para o "X" se posicionar corretamente */
+  position: relative; /* necessário para o botão "X" funcionar */
 }
 
-
+/* Estilização dos textos */
 .devocional-conteudo h2 {
   margin-bottom: 1rem;
   font-size: 1.5rem;
@@ -191,6 +215,7 @@ footer {
   color: #dffbe4;
 }
 
+/* Botão X para fechar */
 .fechar {
   position: absolute;
   right: 1rem;
@@ -201,4 +226,8 @@ footer {
   z-index: 11;
   background: none;
   border: none;
+}
+
+label {
+  display: none;
 }
